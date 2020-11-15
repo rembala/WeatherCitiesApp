@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace App {
-    public class MetasiteWeatherAPI {
+    public class MetasiteWeatherHandler {
         private readonly IMetasiteWeatherAuthorizationHeper _metasiteWeatherAuthorizationHeper;
         private readonly IMetasiteWeatherCitiesHelper _metasiteWeatherCitiesHelper;
         private readonly IMetasiteCitiesHelper _metasiteCitiesHelper;
 
-        public MetasiteWeatherAPI(
+        public MetasiteWeatherHandler(
             IMetasiteWeatherAuthorizationHeper metasiteWeatherAuthorizationHeper,
             IMetasiteCitiesHelper metasiteCitiesHelper,
             IMetasiteWeatherCitiesHelper metasiteWeatherCitiesHelper

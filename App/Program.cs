@@ -9,7 +9,7 @@ namespace App {
     class Program {
         static async Task Main(string[] args) {
             var container = new UnityContainer();
-            container.RegisterType<MetasiteWeatherAPI, MetasiteWeatherAPI>();
+            container.RegisterType<MetasiteWeatherHandler, MetasiteWeatherHandler>();
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterTypes(container);
@@ -26,9 +26,9 @@ namespace App {
                             eventLog.Source = "Application";
                             eventLog.WriteEntry("Meatasite city weathers application is started", EventLogEntryType.Information, 101, 1);
 
-                            var metasiteApi = container.Resolve<MetasiteWeatherAPI>();
+                            var metasiteHandler = container.Resolve<MetasiteWeatherHandler>();
 
-                            var citiesWeather = await metasiteApi
+                            var citiesWeather = await metasiteHandler
                                 .GetCitiesWeatherAsync()
                                 .ConfigureAwait(false);
 
