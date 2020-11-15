@@ -5,3 +5,5 @@ The application can be run through Docker. Right click on project press properti
 <br/> docker build . 
 <br/> 
 docker attach (your container ID)
+<br/> 
+The container should be run in windows containers
